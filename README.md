@@ -1,73 +1,54 @@
-# Student Performance Analysis
+# Student Performance Analysis with Pandas
 
-This project analyzes student performance data from the StudentsPerformance.csv dataset.
-It calculates overall averages, parent-education-based averages, and stores individual student records for further analysis.
+## Overview
+This project is a redo of a previous student performance analysis using pandas. The goal is to practice core pandas skills including data cleaning, feature engineering, aggregation, and grouped statistics. This is my first hands-on project after a break, providing a structured approach to working with real datasets.  
 
-## 📌 Features
+## Dataset
+The dataset contains student demographics and exam scores:  
 
-Reads and processes CSV data using Python’s built-in csv module
+- **gender**  
+- **race/ethnicity**  
+- **parental level of education**  
+- **lunch** (standard or free/reduced)  
+- **test preparation course** (completed or none)  
+- **math score**  
+- **reading score**  
+- **writing score**  
 
-Calculates:
-- Average math, reading, and writing scores
-- Average score grouped by parent education level
-- Stores each student’s record in a structured Python dictionary
-- Demonstrates core data-analysis concepts such as:
-    - Aggregation
-    - Grouping
-    - Iterating through datasets
-    - Type conversion and error handling
+## Features Implemented
+1. **Structural Audit**
+   - Inspect column types, missing values, and score ranges.  
 
-## 📂 Project Structure
-```bash
-student-performance-practice/
-│── StudentsPerformance.csv
-│── students.py
-│── README.md
-```
+2. **Target Construction**
+   - Create `total_score`, `average_score`, and `passed_all` columns.  
 
-## ▶️ How to Run the Script
+3. **Univariate Analysis**
+   - Compute mean, median, std, percentiles, and detect outliers.  
 
-Place students.py and StudentsPerformance.csv in the same folder. Run the Python script:
-```bash
-python students.py
-```
+4. **Grouped Performance Analysis**
+   - Aggregate scores by gender, race/ethnicity, parental education, lunch, and test preparation.  
+   - Rank groups and calculate score gaps.  
 
-The script will output:
-- Column names
-- Total number of processed rows
-- Average scores for each subject
-- Average student performance grouped by parent education level
+## Future Work
+- Conditional comparisons (test preparation effects)  
+- Multidimensional aggregation (pivot tables)  
+- Correlation analysis between subjects  
+- Ranking top and bottom performers  
+- Inequality indicators by demographic variables  
 
-## 🧠 What the Script Does
-1. Reads the CSV File
-Uses csv.reader to read all rows and skip the header.
-2. Builds a List of Students
-Each entry is stored as:
-```bash
-{
-  'gender': ...,
-  'race': ...,
-  'parent_education': ...,
-  'lunch': ...,
-  'test_preparation': ...,
-  'math_score': ...,
-  'reading_score': ...,
-  'writing_score': ...
-}
-```
+## How to Use
+1. Clone the repository:  
+  ```bash
+  git clone https://github.com/cotenthusiast/students-dataset-pandas.git
+  ```
 
-3. Calculates Averages
-Uses sums[] to accumulate totals
-Computes averages for each subject
-Groups students by parent_education and calculates mean score per group
+2. Install dependencies
+  ```bash
+  pip install pandas
+  ```
 
-## 🚀 Future Improvements
+## Learning Goals
 
-Visualizations (Matplotlib/Seaborn)
-Using Pandas for faster and cleaner analysis
-Exporting grouped averages to a CSV
-Building a dashboard (Streamlit)
-
-## 📜 License
-
-This project is free to use for learning and educational purposes.
+- Practice pandas aggregation, grouping, and feature engineering.
+- Rebuild a past project with structured code.
+- Prepare for more advanced data analysis projects.
