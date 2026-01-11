@@ -1,0 +1,27 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+env/
+venv/
+
+# Environment variables
+*.env
+.env
+
+# macOS stuff
+.DS_Store
+
+# Jupyter Notebook checkpoints (if you add notebooks later)
+.ipynb_checkpoints/
+
+# VSCode settings
+.vscode/
+
+# Data files (optional — only if you don't want CSVs committed)
+# *.csv
+
+# PyCharm
+.idea/
