@@ -58,7 +58,8 @@ def comparison_engine(df, category_col, numeric_cols, conditionA, conditionB, ag
     group_B = aggregated.loc[conditionB]
 
     absolute_difference = group_A - group_B
-    relative_difference = (group_A - group_B) / group_B * 100
+    relative_difference = (group_A - group_B) / group_B.replace(0, pd.NA) * 100
+
 
     return group_A, group_B, absolute_difference, relative_difference
 
@@ -68,6 +69,8 @@ def comparison_input(df):
     category_col = input("Category column: ").strip()
     conditionA = input("Condition A: ").strip()
     conditionB = input("Condition B: ").strip()
+    if conditionA == conditionB:
+        raise ValueError("Conditions must be different")
     numeric_cols = ["math score", "reading score", "writing score"]
     agg = input("Aggregation (mean, median, sum): ")
     return category_col, numeric_cols, conditionA, conditionB, agg
@@ -93,3 +96,20 @@ def comparison_interface(df):
     group_A, group_B, abs_diff, rel_diff = results
     for col in numeric_cols:
         print(f"{col}: {group_A[col]} | {group_B[col]} | {abs_diff[col]} | {rel_diff[col]:.1f}%")
+
+def main():
+    print("Choose an option:")
+    print("1. Summarization")
+    print("2. Conditional Comparison")
+    choice = input("Enter 1 or 2: ").strip()
+    if choice == '1':
+        summarize_interface(students)
+    elif choice == '2':
+        comparison_interface(students)
+    else:
+        print("Invalid choice")
+
+try:
+    main()
+except Exception as e:
+    print(f"Error: {e}")
