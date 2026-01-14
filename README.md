@@ -16,21 +16,20 @@ The dataset contains student demographics and exam scores:
 - **writing score**  
 
 ## Features Implemented
-1. **Structural Audit**
-   - Inspect column types, missing values, and score ranges.  
-
-2. **Target Construction**
+1. **Target Construction**
    - Create `total_score`, `average_score`, and `passed_all` columns.  
 
-3. **Univariate Analysis**
+2. **Univariate Analysis**
    - Compute mean, median, std, percentiles, and detect outliers.  
 
-4. **Grouped Performance Analysis**
+3. **Grouped Performance Analysis**
    - Aggregate scores by gender, race/ethnicity, parental education, lunch, and test preparation.  
    - Rank groups and calculate score gaps.  
 
+4. **Conditional Comparisons**
+   - compare between columns based on conditions
+
 ## Future Work
-- Conditional comparisons (test preparation effects)  
 - Multidimensional aggregation (pivot tables)  
 - Correlation analysis between subjects  
 - Ranking top and bottom performers  
